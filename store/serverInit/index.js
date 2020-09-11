@@ -1,16 +1,13 @@
 export default {
   actions: {
-    async nuxtServerInit({
-      commit
-    }, {
-      req
-    }) {
-      await this.dispatch("dictionary/findOne", {
+    async nuxtServerInit({ commit }, { req }) {
+      await this.dispatch("dictionary/findLang", {
         params: {
           filter: {
             where: {
-              lang: 'en'
-            }
+              lang: "en"
+            },
+            include: ["lexicons"]
           }
         }
       });

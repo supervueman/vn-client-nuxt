@@ -1,7 +1,11 @@
-<template lang="pug">
-  main
-    section.section.section--full-screen
-      .container {{error}}
+<template>
+  <main>
+    <section class="section section--full-screen">
+      <div class="container">
+        {{ error }}
+      </div>
+    </section>
+  </main>
 </template>
 
 <script>
@@ -11,7 +15,7 @@ export default {
   props: {
     error: {
       type: Object,
-      default: () => {}
+      default: () => ({})
     }
   }
 };

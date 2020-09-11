@@ -1,6 +1,9 @@
-<template lang="pug">
+<template>
+  <div>Loading...</div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "Loading"
+};
 </script>

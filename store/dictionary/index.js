@@ -12,12 +12,12 @@ export default {
   },
 
   actions: {
-    async findOne({
-      commit
-    }, payload) {
-      const response = await this.$axios.$get('/dictionaries/findone', payload).catch(err => {
-        console.log(err);
-      });
+    async findLang({ commit }, payload) {
+      const response = await this.$axios
+        .$get("/langs/findone", payload)
+        .catch((err) => {
+          console.log(err);
+        });
 
       if (response) {
         const dictionary = JSON.parse(response.value);
@@ -27,7 +27,26 @@ export default {
           transformDictionary[key] = dictionary[key].text;
         }
 
-        commit('SET', transformDictionary);
+        commit("SET", transformDictionary);
+      }
+    },
+
+    async findOne({ commit }, payload) {
+      const response = await this.$axios
+        .$get("/dictionaries/findone", payload)
+        .catch((err) => {
+          console.log(err);
+        });
+
+      if (response) {
+        const dictionary = JSON.parse(response.value);
+        const transformDictionary = {};
+
+        for (const key in dictionary) {
+          transformDictionary[key] = dictionary[key].text;
+        }
+
+        commit("SET", transformDictionary);
       }
     }
   },

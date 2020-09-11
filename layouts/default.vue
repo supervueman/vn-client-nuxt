@@ -1,23 +1,24 @@
-<template lang="pug">
-  .app
-    m-toolbar
-    m-notification
-    nuxt
-    m-footer
+<template>
+  <div class="app">
+    <AppToolbar />
+    <AppNotification />
+    <Nuxt />
+    <AppFooter />
+  </div>
 </template>
 
 <script>
-import mToolbar from "@/components/mToolbar";
-import mFooter from "@/components/mFooter";
-import mNotification from "@/components/mNotification";
+import AppToolbar from "@/components/AppToolbar";
+import AppFooter from "@/components/AppFooter";
+import AppNotification from "@/components/AppNotification";
 
 export default {
   name: "DefaultLayout",
 
   components: {
-    mToolbar,
-    mFooter,
-    mNotification
+    AppToolbar,
+    AppFooter,
+    AppNotification
   }
 };
 </script>
