@@ -8,7 +8,7 @@ module.exports = {
    ** Headers of the page
    */
   head: {
-    title: 'Template',
+    title: 'Taniopal',
     meta: [{
         charset: 'utf-8'
       },
@@ -19,7 +19,7 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: 'Template'
+        content: 'Taniopal'
       },
       {
         hid: 'og:image',
@@ -73,9 +73,10 @@ module.exports = {
   ],
 
   env: {
-    basicAuthLogin: process.env.NUXT_BASIC_AUTH_LOGIN,
-    basicAuthPassword: process.env.NUXT_BASIC_AUTH_PASSWORD,
-    apiKeys: process.env.NUXT_X_API_KEYS
+    basicAuthorizationLogin: process.env.NUXT_BASIC_AUTHORIZATION_LOGIN,
+    baseAuthorizationPassword: process.env.NUXT_BASIC_AUTHORIZATION_PASSWORD,
+    xApiKey: process.env.NUXT_X_API_KEY,
+    allowOrigin: process.env.NUXT_ALLOW_ORIGIN
   },
 
   /*

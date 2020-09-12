@@ -5,7 +5,7 @@ export default {
         params: {
           filter: {
             where: {
-              lang: "en"
+              slug: "en"
             },
             include: ["lexicons"]
           }

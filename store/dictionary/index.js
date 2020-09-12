@@ -19,15 +19,16 @@ export default {
           console.log(err);
         });
 
-      if (response) {
-        const dictionary = JSON.parse(response.value);
-        const transformDictionary = {};
+      if (response && response.lexicons) {
+        const dictionary = {};
 
-        for (const key in dictionary) {
-          transformDictionary[key] = dictionary[key].text;
+        const lexicons = response.lexicons;
+
+        for (let i = 0; i < lexicons.length; i++) {
+          dictionary[lexicons[i].slug] = lexicons[i].value;
         }
 
-        commit("SET", transformDictionary);
+        commit("SET", dictionary);
       }
     },
 
@@ -38,15 +39,16 @@ export default {
           console.log(err);
         });
 
-      if (response) {
-        const dictionary = JSON.parse(response.value);
-        const transformDictionary = {};
+      if (response && response.lexicons) {
+        const dictionary = {};
 
-        for (const key in dictionary) {
-          transformDictionary[key] = dictionary[key].text;
+        const lexicons = response.lexicons;
+
+        for (let i = 0; i < lexicons.length; i++) {
+          dictionary[lexicons[i].slug] = lexicons[i].value;
         }
 
-        commit("SET", transformDictionary);
+        commit("SET", dictionary);
       }
     }
   },
