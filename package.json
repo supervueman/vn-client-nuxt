@@ -22,7 +22,7 @@
     "@nuxtjs/robots": "^2.4.2",
     "cross-env": "^5.2.0",
     "dotenv": "^8.1.0",
-    "nuxt": "^2.3.4"
+    "nuxt": "^3.4.3"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",
